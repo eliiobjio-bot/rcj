@@ -1,0 +1,2 @@
+sudo uhd_find_devices
+sudo uhd_usrp_probe

@@ -1,0 +1,47 @@
+======== 1 =======
+
+默认运行UHD设备
+打开坤恒顺为设备需要在xw_by_srsran/CMakeLists.txt中
+关闭UHD 打开KSW宏
+如下：
+option(ENABLE_UHD            "Enable UHD"                               OFF)
+option(ENABLE_KSW            "Enable KSW"                               ON)
+
+
+======== 2 =======
+
+运行坤恒顺为设备前提需要将
+dll
+下所有的文件拷贝到build/srsenb/src
+
+
+======== 3 =======
+
+坤恒顺为执行目录：
+build/srsenb/src
+
+
+======== 4 =======
+
+执行指令：
+sudo ./srsenb  ../../../srsenb/enb.conf  --enb.network_mode=0 --enb.area_mode=0  | tee enblog.txt
+
+
+======== 5 =======
+
+如果需要读取什么文件
+例如 datai(1).txt
+将datai(1).txt文件放在 执行目录下（build/srsenb/src），不然找不到
+
+
+======== 6 =======
+
+开机经常遇到运行崩溃原因可能是：
+XW_prach.c文件 50行，
+读取ptuch_prach_source_i.txt文件找不到，退出。
+
+XW_dl.c中读取文件操作也可能找不到文件。
+
+
+
+

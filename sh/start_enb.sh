@@ -1,0 +1,1 @@
+sudo ./srsenb/src/srsenb  --config_file=./access/beam1/enb1.conf  --enb.network_mode=0 --enb.area_mode=0 --enb.multi_beam_num=1 --enb.ttcn_time=0 --rf.device_args=ksw_channel_choose=0  | tee enblog.txt

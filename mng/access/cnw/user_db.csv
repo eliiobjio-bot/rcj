@@ -1,0 +1,22 @@
+#                                                                                           
+# .csv to store UE's information in HSS                                                     
+# Kept in the following format: "Name,Auth,IMSI,Key,OP_Type,OP/OPc,AMF,SQN,QCI,IP_alloc"  
+#                                                                                           
+# Name:     Human readable name to help distinguish UE's. Ignored by the HSS          人类可读的名称，用于帮助区分用户设备，被HSS忽略    
+# Auth:     Authentication algorithm used by the UE. Valid algorithms are XOR         UE使用的认证算法。有效算法为XOR（异或）和MILENAGE（米勒纳基）    
+#           (xor) and MILENAGE (mil)                                                        
+# IMSI:     UE's IMSI value (SUPI)                                                    用户设备的IMSI值     
+# Key:      UE's key, where other keys are derived from. Stored in hexadecimal        用户设备的密钥，其他密钥是从该密钥派生的。以十六进制形式存储。
+# OP_Type:  Operator's code type, either OP or OPc                                    运营商代码类型，可以是OP或OPc。     
+# OP/OPc:   Operator Code/Cyphered Operator Code, stored in hexadecimal               运营商代码/加密的运营商代码，以十六进制形式存储。     
+# AMF:      Authentication management field, stored in hexadecimal                    认证管理字段，以十六进制形式存储。      
+# SQN:      UE's Sequence number for freshness of the authentication                  用户设备的用于鉴别认证新鲜度的序列号。      
+# QCI:      QoS Class Identifier for the UE's default bearer.                         用户设备默认承载的QoS类别标识符。      
+# IP_alloc: IP allocation stratagy for the SPGW.                                      PGW的IP分配策略。使用“动态”将自动分配IP地址；使用有效的IPv4地址（例如“172.16.0.2”），用户设备将被分配一个静态IP地址。         
+#           With 'dynamic' the SPGW will automatically allocate IPs                         
+#           With a valid IPv4 (e.g. '172.16.0.2') the UE will have a statically assigned IP.
+#                                                                              
+# Note: Lines starting by '#' are ignored and will be overwritten                           
+#ue2,mil,001010123456780,00112233445566778899aabbccddeeff,opc,63bfa50ee6523365ff14c1f45f88737d,8000,000000001234,7,dynamic
+xw_ue,mil,460000123456780,00112233445566778899aabbccddeeff,opc,000102030405060708090a0b0c0d0e0f,8000,000000000000,1,dynamic
+
